@@ -6,6 +6,7 @@ import { AdminComponent } from './admin.component';
 import { PositionsAndSkillsComponent } from './pages/positions-and-skills/positions-and-skills.component';
 import { PlayersComponent } from './pages/players/players.component';
 import { PlansComponent } from './pages/plans/plans.component';
+import { InsideBarComponent } from './components/inside-bar/inside-bar.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { PlansComponent } from './pages/plans/plans.component';
     PositionsAndSkillsComponent,
     PlayersComponent,
     PlansComponent,
+    InsideBarComponent,
   ],
   imports: [CommonModule, AdminRoutingModule],
 })
