@@ -8,9 +8,12 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  private authService = inject(AuthService);
+  constructor(private authService: AuthService) {}
+
+  email: string = '';
+  password: string = '';
 
   login() {
-    this.authService.login('email@email.com', 'password');
+    this.authService.login(this.email, this.password);
   }
 }

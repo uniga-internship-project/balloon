@@ -9,12 +9,27 @@ export class AuthService {
   private router = inject(Router);
 
   login(email: string, password: string) {
-    const userId = 1;
-    const roleId = role.user;
-    localStorage.setItem('userId', userId.toString());
-    localStorage.setItem('roleId', roleId.toString());
-    this.navigateBasedOnRole();
+
+    const isAdminCredentials = email === 'admin@admin.com' && password === 'adminpassword';
+    const isUserCredentials = email === 'user@user.com' && password === 'userpassword';
+
+    if (isAdminCredentials) {
+      const userId = 1;
+      const roleId = role.admin;
+      localStorage.setItem('userId', userId.toString());
+      localStorage.setItem('roleId', roleId.toString());
+      this.navigateBasedOnRole();
+    } else if (isUserCredentials) {
+      const userId = 2;
+      const roleId = role.user;
+      localStorage.setItem('userId', userId.toString());
+      localStorage.setItem('roleId', roleId.toString());
+      this.navigateBasedOnRole();
+    } else {
+      alert('Invalid email or password');
+    }
   }
+
 
   logout() {
     localStorage.removeItem('userId');
