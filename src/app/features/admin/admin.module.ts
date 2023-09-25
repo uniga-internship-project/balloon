@@ -11,6 +11,10 @@ import { CreatePositionModalComponent } from './components/create-position-modal
 import { EditPositionModalComponent } from './components/edit-position-modal/edit-position-modal.component';
 import { CreateSkillModalComponent } from './components/create-skill-modal/create-skill-modal.component';
 import { EditSkillModalComponent } from './components/edit-skill-modal/edit-skill-modal.component';
+import { CreatePlayerModalComponent } from './components/create-player-modal/create-player-modal.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
+import { EditPlayerModalComponent } from './components/edit-player-modal/edit-player-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,9 @@ import { EditSkillModalComponent } from './components/edit-skill-modal/edit-skil
     EditPositionModalComponent,
     CreateSkillModalComponent,
     EditSkillModalComponent,
+    CreatePlayerModalComponent,
+    EditPlayerModalComponent,
   ],
-  imports: [CommonModule, AdminRoutingModule],
+  imports: [CommonModule, AdminRoutingModule, NgSelectModule, FormsModule],
 })
 export class AdminModule {}

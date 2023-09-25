@@ -1,0 +1,86 @@
+<div class="modal-header">
+  <h4 class="modal-title">Edit Player</h4>
+  <button (click)="close()" class="btn-close"></button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="mb-3">
+      <label class="form-label form-label--required">Name</label>
+      <input class="form-control" placeholder="Name" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label form-label--required">Price</label>
+      <div class="input-group">
+        <input type="number" class="form-control" />
+        <span class="input-group-text">$</span>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label form-label--required">Position</label>
+      <ng-select
+        [(ngModel)]="selectedPosition"
+        [ngModelOptions]="{ standalone: true }"
+      >
+        <ng-option *ngFor="let position of positions" [value]="position.id">{{
+          position.name
+        }}</ng-option>
+      </ng-select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label form-label--required">Nationality</label>
+      <ng-select
+        [(ngModel)]="selectedNationality"
+        [ngModelOptions]="{ standalone: true }"
+      >
+        <ng-option
+          *ngFor="let nationality of nationalities"
+          [value]="nationality.id"
+          >{{ nationality.name }}</ng-option
+        >
+      </ng-select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label form-label--required">Current Teams</label>
+      <ng-select
+        [(ngModel)]="selectedCurrentTeams"
+        [ngModelOptions]="{ standalone: true }"
+      >
+        <ng-option *ngFor="let team of teams" [value]="team.id">{{
+          team.name
+        }}</ng-option>
+      </ng-select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label form-label--required">Weight(kg)</label>
+      <input
+        type="number"
+        min="1"
+        class="form-control"
+        placeholder="Weight(kg)"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label form-label--required">Height(cm)</label>
+      <input
+        type="number"
+        min="1"
+        class="form-control"
+        placeholder="Height(cm)"
+      />
+    </div>
+    <div>
+      <label class="form-label form-label--required">Best Foot</label>
+      <select class="form-select">
+        <option selected>Open this select menu</option>
+        <option value="left">ซ้าย</option>
+        <option value="right">ขวา</option>
+      </select>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button (click)="close()" class="btn btn-secondary">Close</button>
+  <button (click)="handleConfirmClick()" class="btn btn-primary">
+    Confirm
+  </button>
+</div>
