@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h4 class="modal-title">Create Plan</h4>
+  <button (click)="close()" class="btn-close"></button>
+</div>
+<div class="modal-body">
+  <form>
+    <div class="mb-3">
+      <label class="form-label form-label--required">Name</label>
+      <input class="form-control" placeholder="Name" />
+    </div>
+    <div>
+      <label class="form-label form-label--required">Description</label>
+      <input class="form-control" placeholder="Description" />
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button (click)="close()" class="btn btn-secondary">Close</button>
+  <button (click)="handleConfirmClick()" class="btn btn-primary">
+    Confirm
+  </button>
+</div>

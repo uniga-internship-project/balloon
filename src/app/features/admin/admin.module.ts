@@ -15,6 +15,8 @@ import { CreatePlayerModalComponent } from './components/create-player-modal/cre
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 import { EditPlayerModalComponent } from './components/edit-player-modal/edit-player-modal.component';
+import { CreatePlanModalComponent } from './components/create-plan-modal/create-plan-modal.component';
+import { EditPlanModalComponent } from './components/edit-plan-modal/edit-plan-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { EditPlayerModalComponent } from './components/edit-player-modal/edit-pl
     EditSkillModalComponent,
     CreatePlayerModalComponent,
     EditPlayerModalComponent,
+    CreatePlanModalComponent,
+    EditPlanModalComponent,
   ],
   imports: [CommonModule, AdminRoutingModule, NgSelectModule, FormsModule],
 })
