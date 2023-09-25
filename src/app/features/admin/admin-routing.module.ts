@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AdminComponent } from './admin.component';
-import { PositionsAndSkillsComponent } from './pages/positions-and-skills/positions-and-skills.component';
-import { PlayersComponent } from './pages/players/players.component';
 import { PlansComponent } from './pages/plans/plans.component';
+import { PlayersComponent } from './pages/players/players.component';
+import { PositionsAndSkillsComponent } from './pages/positions-and-skills/positions-and-skills.component';
 
 const routes: Routes = [
   {
