@@ -1,3 +1,6 @@
-<h1>User</h1>
-<button class="btn btn-primary" (click)="logout()">Logout</button>
-<router-outlet />
+<div class="layout">
+    <app-inside-bar-user />
+    <div class="main">
+        <router-outlet [hidden]="true" />
+    </div>
+</div>

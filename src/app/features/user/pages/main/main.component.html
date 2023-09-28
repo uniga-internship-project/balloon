@@ -1,1 +1,40 @@
-<p>main works!</p>
+<div class="navbar navbar-expand-lg navbar-dark fixed-top p-3 m-auto">
+    <a class="navbar-brand" href="#">
+      <img
+        src="assets/img/logo.png"
+        alt="background"
+        style="width: 199px; height: 85px;"
+      />
+    </a>
+    <div class="navbar-nav ml-auto d-flex gap-4">
+        <a class="nav-item nav-link nav-left" 
+            [class.active]="selectedNavItem === 'buy-sell'" 
+            (click)="selectedNavItem = 'buy-sell'">Buy/sell</a>
+        <a class="nav-item nav-link nav-left" 
+            [class.active]="selectedNavItem === 'manage'" 
+            (click)="selectedNavItem = 'manage'">Manage</a>
+        <a class="nav-item nav-link nav-left" 
+            [class.active]="selectedNavItem === 'status'" 
+            (click)="selectedNavItem = 'status'">Status</a>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end m-2" id="navbarNav">
+      <div class="navbar-nav d-flex gap-3">
+        <a class="nav-item nav-link nav-right px-2" href="#">
+            <img src="assets/img/coin.png" alt="">
+            500M$</a>
+        <a class="nav-item nav-link nav-right profile" href="#">
+            <img src="assets/img/profile.png" alt="">
+            User12345...</a>
+      </div>
+    </div>
+  </div>
+  
+
+<div class="container-fluid">
+  <div class="overlay"></div>
+  <img
+    src="assets/img/artbreeder-image.png"
+    alt="background"
+    class="bg-image"
+  />
+</div>
