@@ -1,22 +1,21 @@
 <div class="navbar navbar-expand-lg navbar-dark fixed-top p-3 m-auto">
-    <a class="navbar-brand" href="#">
+      <a class="navbar-brand  "  >
       <img
         src="assets/img/logo.png"
         alt="background"
         style="width: 199px; height: 85px;"
-      />
+        (change)="toggleselectedOption('main')" [class.active]="selectedNavItem === 'main'" (click)="selectedNavItem = 'main'"  />
     </a>
     <div class="navbar-nav ml-auto d-flex gap-4">
-        <a class="nav-item nav-link nav-left" routerLinkActive="active"routerLink="/user/buy-and-sell"
+        <a class="nav-item nav-link nav-left" 
             [class.active]="selectedNavItem === 'buy-sell'" 
-            (click)="selectedNavItem = 'buy-sell'">Buy/sell</a>
-           
+            (click)="selectedNavItem = 'buy-sell'" (change)="toggleselectedOption('buy-sell')">Buy/sell</a>
         <a class="nav-item nav-link nav-left" 
             [class.active]="selectedNavItem === 'manage'" 
-            (click)="selectedNavItem = 'manage'">Manage</a>
+            (click)="selectedNavItem = 'manage'" (change)="toggleselectedOption('manage')">Manage</a>
         <a class="nav-item nav-link nav-left" 
             [class.active]="selectedNavItem === 'status'" 
-            (click)="selectedNavItem = 'status'">Status</a>
+            (click)="selectedNavItem = 'status'"(change)="toggleselectedOption('status')">Status</a>
     </div>
     <div class="collapse navbar-collapse justify-content-end m-2" id="navbarNav">
       <div class="navbar-nav d-flex gap-3">
@@ -57,35 +56,46 @@
   
 
 <div class="container-fluid">
-
   <div class="overlay"></div>
   <img
     src="assets/img/artbreeder-image.png"
     alt="background"
     class="bg-image"
   />
-  <div class="row container-fluid ms-5  justify-content-around   ">
-    <div class="col-3  ">
-      <img
-      src="assets/img/Haabom.png"
-      alt="background"
-      class="Haabom"
-    />
-    </div>
-    <div class="col-3 ">
-      <img
-      src="assets/img/Mesnon.png"
-      alt="background"
-      class="Mesnon"
-    />
-    </div>
-    <div class="col-4 ">
-      <img
-      src="assets/img/stadium.png"
-      alt="background"
-      class="stadium"
-    />
-    </div>
-  </div>
+
+    <ng-container *ngIf="isActiveStep === false"> 
+      <div class="buy-sell-main row" *ngIf="selectedNavItem === 'main'">
+        <div class="col-3  ">
+          <img
+          src="assets/img/Haabom.png"
+          alt="background"
+          class="Haabom"
+        />
+        </div>
+        <div class="col-3 ">
+          <img
+          src="assets/img/Mesnon.png"
+          alt="background"
+          class="Mesnon"
+        />
+        </div>
+        <div class="col-4 ">
+          <img
+          src="assets/img/stadium.png"
+          alt="background"
+          class="stadium"
+        />
+        </div>
+      </div>
+    </ng-container>
+  <ng-container *ngIf="isActiveStep === false">
+    <app-buy-and-sell class="buy-sell" *ngIf="selectedNavItem === 'buy-sell'"></app-buy-and-sell>
+  </ng-container>
+  <ng-container *ngIf="isActiveStep === false">
+    <app-manage *ngIf="selectedNavItem === 'manage'"></app-manage>
+  </ng-container>
+  <ng-container *ngIf="isActiveStep === false">
+    <app-status *ngIf="selectedNavItem === 'status'"></app-status>
+  </ng-container>
 </div>
 

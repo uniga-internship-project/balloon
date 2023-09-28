@@ -7,11 +7,20 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
-  selectedNavItem: string = ' this.authService.logout();';
+  selectedNavItem: string = '';
+  isActiveStep: boolean = false;
 
   private authService = inject(AuthService);
 
   logout() {
     this.authService.logout();
+  }
+
+  toggleselectedOption(text: string): void {
+    if (this.selectedNavItem === text) {
+      this.selectedNavItem = '';
+    } else {
+      this.selectedNavItem = text;
+    }
   }
 }
