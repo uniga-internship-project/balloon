@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
-  selectedNavItem: string = '';
+  selectedNavItem: string = ' this.authService.logout();';
 
   private authService = inject(AuthService);
 

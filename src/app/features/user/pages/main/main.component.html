@@ -7,9 +7,10 @@
       />
     </a>
     <div class="navbar-nav ml-auto d-flex gap-4">
-        <a class="nav-item nav-link nav-left" 
+        <a class="nav-item nav-link nav-left" routerLinkActive="active"routerLink="/user/buy-and-sell"
             [class.active]="selectedNavItem === 'buy-sell'" 
             (click)="selectedNavItem = 'buy-sell'">Buy/sell</a>
+           
         <a class="nav-item nav-link nav-left" 
             [class.active]="selectedNavItem === 'manage'" 
             (click)="selectedNavItem = 'manage'">Manage</a>
@@ -56,10 +57,35 @@
   
 
 <div class="container-fluid">
+
   <div class="overlay"></div>
   <img
     src="assets/img/artbreeder-image.png"
     alt="background"
     class="bg-image"
   />
+  <div class="row container-fluid ms-5  justify-content-around   ">
+    <div class="col-3  ">
+      <img
+      src="assets/img/Haabom.png"
+      alt="background"
+      class="Haabom"
+    />
+    </div>
+    <div class="col-3 ">
+      <img
+      src="assets/img/Mesnon.png"
+      alt="background"
+      class="Mesnon"
+    />
+    </div>
+    <div class="col-4 ">
+      <img
+      src="assets/img/stadium.png"
+      alt="background"
+      class="stadium"
+    />
+    </div>
+  </div>
 </div>
+
