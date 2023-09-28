@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
   selectedNavItem: string = '';
+
+  private authService = inject(AuthService);
+
+  logout() {
+    this.authService.logout();
+  }
 }
