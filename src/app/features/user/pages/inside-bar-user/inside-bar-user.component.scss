@@ -61,3 +61,38 @@
         margin-right: 12px;
     }
 }
+.profile {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    img{
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color:   #BCDFFB;
+    }
+}
+
+
+@media (max-width: 991.98px) {
+    .nav-left, .nav-right,.btn-logout{
+        margin-bottom: 15px;
+        width: 100%;
+        &:hover{
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .nav-left, .nav-right {
+        font-size: 12px;
+        padding: 5px 10px;
+        &:hover{
+            width: 100%;
+        }
+    }
+}
+.navbar {
+    z-index: 1000;
+}

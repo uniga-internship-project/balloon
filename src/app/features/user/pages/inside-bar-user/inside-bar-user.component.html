@@ -1,4 +1,5 @@
 <div class="navbar navbar-expand-lg navbar-dark fixed-top p-3 m-auto">
+
     <a class="navbar-brand">
         <img
             src="assets/img/logo.png"
@@ -7,26 +8,25 @@
             [class.active]="selectedNavItem === 'main'" 
             (click)="toggleselectedOption('main')" />
     </a>
-    <div class="navbar-nav ml-auto d-flex gap-4">
-    <a class="nav-item nav-link nav-left" 
-        [class.active]="selectedNavItem === 'buy-sell'" 
-        (click)="toggleselectedOption('buy-sell')">Buy/sell</a>
-    <a class="nav-item nav-link nav-left" 
-        [class.active]="selectedNavItem === 'manage'" 
-        (click)="toggleselectedOption('manage')">Manage</a>
-    <a class="nav-item nav-link nav-left" 
-        [class.active]="selectedNavItem === 'status'" 
-        (click)="toggleselectedOption('status')">Status</a>
-    </div>
-    <div class="collapse navbar-collapse justify-content-end m-2" id="navbarNav">
-    <div class="navbar-nav d-flex gap-3">
-        <a class="nav-item nav-link nav-right px-2" href="#">
-            <img src="assets/img/coin.png" alt="">
-            500M$</a>
-        <a class="nav-item nav-link nav-right profile" href="#">
-            <img src="assets/img/profile.png" alt="">
-            User12345...</a>
-            <button class="button button--light-primary w-30" (click)="logout()">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between m-2" id="navbarNav">
+        <div class="navbar-nav ml-auto d-flex gap-4 me-5">
+            <a class="nav-item nav-link nav-left" [class.active]="selectedNavItem === 'buy-sell'" (click)="toggleselectedOption('buy-sell')">Buy/sell</a>
+            <a class="nav-item nav-link nav-left" [class.active]="selectedNavItem === 'manage'" (click)="toggleselectedOption('manage')">Manage</a>
+            <a class="nav-item nav-link nav-left" [class.active]="selectedNavItem === 'status'" (click)="toggleselectedOption('status')">Status</a>
+        </div>
+        <div class="navbar-nav d-flex gap-3">
+            <a class="nav-item nav-link nav-right px-2" >
+                <img src="assets/img/coin.png" alt=""> 500M$
+            </a>
+            <a class="nav-item nav-link nav-right profile" >
+                <img src="assets/img/profile.png" alt=""> User12345...
+            </a>
+            <button class="button button--light-primary btn-logout w-30" (click)="logout()">
                 <svg
                 width="17"
                 height="16"
@@ -49,8 +49,7 @@
                     stroke-linejoin="round"
                 />
                 </svg>
-                Logout
             </button>
-    </div>
+        </div>
     </div>
 </div>
